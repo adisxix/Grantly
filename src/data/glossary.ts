@@ -1,0 +1,23 @@
+/** @type {{ term: string, definition: string, category?: string }[]} */
+export const GLOSSARY = [
+  { term: 'Merit-based', definition: 'Scholarships awarded based on academic, athletic, or artistic achievement rather than financial need.' },
+  { term: 'Need-based', definition: 'Scholarships awarded based on the financial need of the student and their family.' },
+  { term: 'Renewable', definition: 'A scholarship that can be received for multiple years, subject to conditions like maintaining a GPA.' },
+  { term: 'GPA', definition: 'Grade Point Average — a numeric measure of academic performance. In India, often expressed as a percentage.' },
+  { term: 'Funding gap', definition: 'The difference between the total cost of education and the funds you have or expect to receive.' },
+  { term: 'Expected value', definition: 'The amount you can realistically expect from a scholarship, weighted by your match score and competitiveness.' },
+  { term: 'Eligibility', definition: 'The set of criteria a student must meet to qualify for a scholarship.' },
+  { term: 'Stipend', definition: 'A regular payment to support living expenses, distinct from tuition coverage.' },
+  { term: 'Cadence', definition: 'How a scholarship pays out: one-time, annually, or monthly.' },
+  { term: 'First-generation', definition: 'A student whose parents did not complete a bachelor\u2019s degree.' },
+  { term: 'Category certificate', definition: 'An official document proving membership in a reserved category (OBC, SC, ST, EWS).' },
+  { term: 'Income certificate', definition: 'A government-issued document verifying a family\u2019s annual income.' },
+  { term: 'Recommendation letter', definition: 'A letter from a teacher, employer, or mentor endorsing the applicant.' },
+  { term: 'Essay prompt', definition: 'A specific question or topic the scholarship asks you to write about.' },
+  { term: 'Readiness score', definition: 'A measure of how prepared your application is, based on checklist, documents, essays, and time.' },
+  { term: 'Match score', definition: 'A 0–100 score showing how well a scholarship fits your profile.' },
+  { term: 'Provider', definition: 'The organisation offering the scholarship — government, corporate, university, NGO, or foundation.' },
+  { term: 'Awards count', definition: 'The number of scholarships the provider expects to award in a cycle.' },
+  { term: 'Deadline', definition: 'The final date by which an application must be submitted to be considered.' },
+  { term: 'Confirmation number', definition: 'A unique reference issued when you submit an application, used to track its status.' },
+]
