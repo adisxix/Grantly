@@ -1,11 +1,13 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom'
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, type ReactNode } from 'react'
 import { AppShell } from '@/app/layouts/AppShell'
 import { MarketingLayout } from '@/app/layouts/MarketingLayout'
 import { useProfileStore } from '@/store/useProfileStore'
 import { PageLoader } from '@/components/layout/PageLoader'
+import { RouteErrorFallback } from '@/components/layout/RouteErrorFallback'
 
-// Lazy route-level code splitting
+type RouteElement = { children: ReactNode }
+
 const Landing = lazy(() => import('@/pages/Landing'))
 const Onboarding = lazy(() => import('@/pages/Onboarding'))
 const Dashboard = lazy(() => import('@/pages/Dashboard'))
@@ -23,12 +25,12 @@ const LearnArticle = lazy(() => import('@/pages/LearnArticle'))
 const Settings = lazy(() => import('@/pages/Settings'))
 const NotFound = lazy(() => import('@/pages/NotFound'))
 
-const withSuspense = (el) => (
+const withSuspense = (el: ReactNode) => (
   <Suspense fallback={<PageLoader />}>{el}</Suspense>
 )
 
 /** Guard that redirects to onboarding if no profile exists. */
-function requireProfile({ children }) {
+function requireProfile({ children }: RouteElement) {
   const hasProfile = useProfileStore.getState().hasProfile()
   if (!hasProfile) return <Navigate to="/onboarding" replace />
   return children
@@ -37,6 +39,7 @@ function requireProfile({ children }) {
 export const router = createBrowserRouter([
   {
     element: <MarketingLayout />,
+    errorElement: <RouteErrorFallback />,
     children: [
       { path: '/', element: withSuspense(<Landing />) },
     ],
@@ -44,9 +47,11 @@ export const router = createBrowserRouter([
   {
     path: '/onboarding',
     element: withSuspense(<Onboarding />),
+    errorElement: <RouteErrorFallback />,
   },
   {
     element: <AppShell />,
+    errorElement: <RouteErrorFallback />,
     children: [
       { path: '/app', element: <Navigate to="/app/dashboard" replace /> },
       { path: '/app/dashboard', element: withSuspense(requireProfile({ children: <Dashboard /> })) },
