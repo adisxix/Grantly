@@ -4,12 +4,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node \"%INIT_CWD%\\node_modules\\vite\\bin\\vite.js\"",
-    "build": "node \"%INIT_CWD%\\node_modules\\vite\\bin\\vite.js\" build",
-    "preview": "node \"%INIT_CWD%\\node_modules\\vite\\bin\\vite.js\" preview",
-    "lint": "node \"%INIT_CWD%\\node_modules\\eslint\\bin\\eslint.js\" src --ext .ts,.tsx",
-    "test": "node \"%INIT_CWD%\\node_modules\\vitest\\vitest.mjs\" --run",
-    "typecheck": "node \"%INIT_CWD%\\node_modules\\typescript\\bin\\tsc\" --noEmit"
+    "dev": "node node_modules/vite/bin/vite.js",
+    "build": "node node_modules/vite/bin/vite.js build",
+    "preview": "node node_modules/vite/bin/vite.js preview",
+    "lint": "node node_modules/eslint/bin/eslint.js src --ext .ts,.tsx",
+    "test": "node node_modules/vitest/vitest.mjs --run",
+    "typecheck": "node node_modules/typescript/bin/tsc --noEmit"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.1.0",
